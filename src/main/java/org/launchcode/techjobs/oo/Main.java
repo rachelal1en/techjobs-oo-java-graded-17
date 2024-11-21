@@ -2,18 +2,22 @@ package org.launchcode.techjobs.oo;
 public class Main {
 
     public static void main(String[] args) {
-//        Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-//        Job job2 = new Job("Web Developer", new Employer("LaunchCode"), new Location("St. Louis"), new PositionType("Front-end developer"), new CoreCompetency("JavaScript"));
-//        Job job3 = new Job("Ice cream tester", new Employer(""), new Location("Home"), new PositionType("UX"), new CoreCompetency("Tasting ability"));
+        Job temp3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Job temp4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        String temp3String = temp3.toString();
+
+        System.out.println(temp3String);
+
+        Job temp5 = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
+        String temp5String = temp5.toString();
+
+        System.out.println(temp5String);
+
+//        Job temp1 = new Job();
+//        String temp1String = temp1.toString();
 //
-//        ArrayList<Job> jobs = new ArrayList<>();
-//        jobs.add(job1);
-//        jobs.add(job2);
-//        jobs.add(job3);
-//
-//        for (Job job : jobs){
-//            System.out.println(job);
-//        }
+//        System.out.println(temp1String);
+
     }
 
 }
