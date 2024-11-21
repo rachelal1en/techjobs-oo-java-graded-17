@@ -13,6 +13,7 @@ public class Job {
     private PositionType positionType;
     private CoreCompetency coreCompetency;
     private static final String noData = "Data not available";
+    private static final String emptyConst = "OOPS! This job does not seem to exist.";
 
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
     //  other five fields. The second constructor should also call the first in order to initialize
@@ -53,7 +54,10 @@ public class Job {
     }
 
     public String getName() {
-            return name;
+        if (name.isEmpty()) {
+            this.name = noData;
+        }
+            return name != null ? name : emptyConst;
     }
 
     public void setName(String name) {
@@ -61,6 +65,12 @@ public class Job {
     }
 
     public Employer getEmployer() {
+        if (employer.getValue().isEmpty()) {
+            employer.setValue(noData);
+        }
+        if (employer == null){
+            throw new IllegalStateException(emptyConst);
+        }
         return employer;
     }
 
@@ -69,6 +79,12 @@ public class Job {
     }
 
     public Location getLocation() {
+        if (location.getValue().isEmpty()) {
+            location.setValue(noData);
+        }
+        if (location == null){
+            throw new IllegalStateException(emptyConst);
+        }
         return location;
     }
 
@@ -77,6 +93,12 @@ public class Job {
     }
 
     public PositionType getPositionType() {
+        if (positionType.getValue().isEmpty()) {
+            positionType.setValue(noData);
+        }
+        if (positionType == null){
+            throw new IllegalStateException(emptyConst);
+        }
         return positionType;
     }
 
@@ -85,6 +107,12 @@ public class Job {
     }
 
     public CoreCompetency getCoreCompetency() {
+        if (coreCompetency.getValue().isEmpty()) {
+            coreCompetency.setValue(noData);
+        }
+        if (coreCompetency == null){
+            throw new IllegalStateException(emptyConst);
+        }
         return coreCompetency;
     }
 
@@ -96,8 +124,8 @@ public class Job {
     @Override
     public String toString() {
         String newLine = System.lineSeparator();
-        if (name.isEmpty()){
-            this.name = noData;
+        if (name.equals("")){
+                this.name = noData;
         }
         if (employer.getValue().equals("")) {
             this.employer.setValue(noData);
@@ -111,11 +139,12 @@ public class Job {
         if (coreCompetency.getValue().equals("")) {
             this.coreCompetency.setValue(noData);
         }
-        return newLine + "ID: " + this.id + newLine
-                + "Name: " + this.name + newLine
-                + "Employer: " + this.employer + newLine
-                + "Location: " + this.location + newLine
-                + "Position Type: " + this.positionType + newLine
-                + "Core Competency: " + this.coreCompetency + newLine;
+            return newLine + "ID: " + this.id + newLine
+                    + "Name: " + this.name + newLine
+                    + "Employer: " + this.employer + newLine
+                    + "Location: " + this.location + newLine
+                    + "Position Type: " + this.positionType + newLine
+                    + "Core Competency: " + this.coreCompetency + newLine;
+
     }
 }

@@ -1,7 +1,5 @@
 package org.launchcode.techjobs.oo;
 
-import java.util.Objects;
-
 public class CoreCompetency extends JobField {
 
     public CoreCompetency(String value) {
@@ -17,8 +15,4 @@ public class CoreCompetency extends JobField {
         return getId() == that.getId();
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId());
-    }
 }

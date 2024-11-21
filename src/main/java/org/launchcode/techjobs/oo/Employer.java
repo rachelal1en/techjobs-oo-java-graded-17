@@ -1,7 +1,5 @@
 package org.launchcode.techjobs.oo;
 
-import java.util.Objects;
-
 public class Employer extends JobField {
 
     public Employer (String value) {
@@ -15,11 +13,6 @@ public class Employer extends JobField {
         if (!(o instanceof Employer)) return false;
         Employer that = (Employer) o;
         return getId() == that.getId();
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId());
     }
 
 }

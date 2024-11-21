@@ -13,7 +13,7 @@ public class JobTest {
     public void testSettingJobId() {
         Job temp1 = new Job();
         Job temp2 = new Job();
-        assertNotEquals(temp1, temp2);
+        assertNotEquals(temp1.getId(), temp2.getId());
     }
 
     //jobs used in multiple tests

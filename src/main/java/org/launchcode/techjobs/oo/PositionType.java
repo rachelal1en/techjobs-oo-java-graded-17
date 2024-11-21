@@ -1,7 +1,5 @@
 package org.launchcode.techjobs.oo;
 
-import java.util.Objects;
-
 public class PositionType extends JobField {
 
     public PositionType(String value) {
@@ -15,11 +13,6 @@ public class PositionType extends JobField {
         if (!(o instanceof PositionType)) return false;
         PositionType that = (PositionType) o;
         return getId() == that.getId();
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId());
     }
 
 }

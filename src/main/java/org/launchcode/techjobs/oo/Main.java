@@ -14,7 +14,7 @@ public class Main {
         System.out.println(temp5String);
 
 //        Job temp1 = new Job();
-//        String temp1String = temp1.toString();
+//        String temp1String = temp1.getEmployer().getValue();
 //
 //        System.out.println(temp1String);
 
